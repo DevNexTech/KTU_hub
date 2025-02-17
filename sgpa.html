@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #6c5ce7;
+            color: white;
+        }
+        button {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #4834d4;
+        }
+        input, select {
+            padding: 5px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>SGPA Calculator</h2>
+        <table id="sgpaTable">
+            <tr>
+                <th>Subject</th>
+                <th>Credits</th>
+                <th>Grade</th>
+                <th>Action</th>
+            </tr>
+        </table>
+        <button onclick="addRow()">Add Subject</button>
+        <button onclick="calculateSGPA()">Calculate SGPA</button>
+        <h3 id="result"></h3>
+    </div>
+    <script>
+        function addRow() {
+            let table = document.getElementById("sgpaTable");
+            let row = table.insertRow();
+            row.innerHTML = `
+                <td><input type="text" placeholder="Subject"></td>
+                <td><input type="number" min="1" max="5" placeholder="Credits"></td>
+                <td>
+                    <select>
+                        <option value="10">S</option>
+                        <option value="9">A</option>
+                        <option value="8">B</option>
+                        <option value="7">C</option>
+                        <option value="6">D</option>
+                        <option value="5">E</option>
+                        <option value="0">F</option>
+                    </select>
+                </td>
+                <td><button onclick="removeRow(this)">Remove</button></td>
+            `;
+        }
+
+        function removeRow(button) {
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+
+        function calculateSGPA() {
+            let table = document.getElementById("sgpaTable");
+            let rows = table.getElementsByTagName("tr");
+            let totalCredits = 0, totalPoints = 0;
+
+            for (let i = 1; i < rows.length; i++) {
+                let cells = rows[i].getElementsByTagName("td");
+                if (cells.length > 0) {
+                    let credits = parseFloat(cells[1].getElementsByTagName("input")[0].value);
+                    let grade = parseFloat(cells[2].getElementsByTagName("select")[0].value);
+
+                    if (!isNaN(credits) && !isNaN(grade)) {
+                        totalCredits += credits;
+                        totalPoints += credits * grade;
+                    }
+                }
+            }
+
+            let sgpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : "0.00";
+            document.getElementById("result").innerText = "SGPA: " + sgpa;
+        }
+    </script>
+</body>
+</html>
