@@ -1,0 +1,50 @@
+/*HEADER in header css file*/
+
+
+/* Subject BOX MAIN*/
+.subject-container {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+  gap: 30px;
+  padding: 20px;
+  height: 70vh; /* Ensures it takes the full height */
+}
+
+/* Each subject box styling */
+.subject-box {
+  background-color: #ffffff; /* Solid background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  padding: 25px 20px; /* Padding for balance */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  cursor: pointer;
+  width: auto; /* Width is determined by content */
+  min-width: 200px; /* Minimum width to keep boxes from becoming too narrow */
+  max-width: 400px; /* Maximum width to prevent the boxes from getting too wide */
+  word-wrap: break-word; /* Ensures text wraps properly */
+}
+
+/* Cool font styling for the subject name */
+.subject-name {
+  font-family: 'Arial', sans-serif; /* Clean and simple font */
+  font-size: 22px; /* Slightly larger text */
+  font-weight: bold; /* Bold text */
+  color: #333; /* Dark text color */
+  margin: 0;
+  text-transform: capitalize; /* Capitalized first letter */
+}
+
+/* Hover effect on subject boxes */
+.subject-box:hover {
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+}
+/* /Subject Box main} */
+
+ 
+
+/*FOOTER in footernormal css file*/

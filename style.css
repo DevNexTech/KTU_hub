@@ -1,0 +1,122 @@
+/*HEADER in header css file*/
+
+
+  .hero {
+    background: linear-gradient(to right, #6a1b9a, #4a148c);
+    padding: 20px 5%;
+    justify-content: space-around;
+    margin-top: 0;
+    border: 2px solid black;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 370px;
+    margin-left: 2%; /* Ensure left margin */
+    margin-right: 2%; /* Ensure right margin */
+
+    .h-container {
+      display: flex;
+      max-width: 1140px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .h-left {
+        align-items: center;
+        text-align: center;
+        h1 {
+          
+          display: flex;
+          font-size: clamp(2.5rem, 6vw, 6rem); /* Scales dynamically */
+          color: rgb(21, 183, 107);
+          
+        }
+      }
+
+      .h-right {
+        align-items: center;
+        display: flex;
+        max-width: 50%;
+        position: relative;
+      }
+
+      .h-right img {
+        height: 250px;
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease,
+          filter 0.3s ease;
+        filter: brightness(1.2) contrast(1.3);
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      .h-right img:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+        filter: brightness(1.5) contrast(1.5);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  /* Stats Section */
+  .stats {
+    margin-bottom: 200px;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(4, 1fr); /* Four equally-sized columns */
+    gap: 1.5rem; /* Space between boxes */
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+
+  .stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    border: 2px solid #ddd; /* Box border */
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+  }
+
+  .stat-box h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #15b76b; /* Green text for standout effect */
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-box p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .stat-box img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Slight hover pop-out */
+  }
+
+  /*FOOTER in footernormal css file*/
+
