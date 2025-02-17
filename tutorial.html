@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorials</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .semester { cursor: pointer; padding: 10px; background: #007bff; color: white; margin: 5px 0; }
+        .subjects, .modules { display: none; margin-left: 20px; }
+        .subject { cursor: pointer; padding: 8px; background: #28a745; color: white; margin: 3px 0; }
+        .module { margin-left: 20px; }
+    </style>
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            element.style.display = element.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <h2>Video Tutorials</h2>
+    
+    <div class="semester" onclick="toggleVisibility('s5-subjects')">Semester 5</div>
+    <div id="s5-subjects" class="subjects">
+        <div class="subject" onclick="toggleVisibility('subject1')">WAD</div>
+        <div id="subject1" class="modules">
+            <div class="module"><a href="https://youtu.be/m9hm1ctTL6s?si=kLAanxJ_WROCWlbf" target="_blank">Module 1</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link2" target="_blank">Module 2</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link3" target="_blank">Module 3</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link4" target="_blank">Module 4</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link5" target="_blank">Module 5</a></div>
+        </div>
+        <div class="subject" onclick="toggleVisibility('subject2')">FLAT</div>
+        <div id="subject2" class="modules">
+            <div class="module"><a href="https://youtu.be/m9hm1ctTL6s?si=kLAanxJ_WROCWlbf" target="_blank">Module 1</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link7" target="_blank">Module 2</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link8" target="_blank">Module 3</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link9" target="_blank">Module 4</a></div>
+            <div class="module"><a href="https://youtube.com/your_video_link10" target="_blank">Module 5</a></div>
+        </div>
+        <!-- Add similar blocks for Subject 3, Subject 4, and Subject 5 -->
+    </div>
+</body>
+</html>
