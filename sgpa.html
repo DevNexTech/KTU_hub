@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGPA Calculator</title>
+    <link rel="stylesheet" href="css/footersmall.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="style.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,6 +18,7 @@
         .container {
             width: 50%;
             margin: 50px auto;
+            margin-bottom: 300px;
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -58,6 +62,51 @@
     </style>
 </head>
 <body>
+     <div class="main-content">
+    <header>
+      <div class="navbar">
+        <div class="container-navigation">
+          <!-- Navigation Left -->
+          <div class="navigation-left">
+            <div class="brand">
+              <img src="IMG/ktuhub.png" alt="KTU HUB Logo" class="logo" />
+              <!-- Add alt text to the image for accessibility -->
+            </div>
+          </div>
+
+          <!-- Navigation Middle -->
+          <div class="navigation-middle">
+            <div class="nav-menu">
+              <a href="index.html" class="nav-link" lang="en">HOME</a>
+              <div class="nav-link dropdown">
+                NOTES
+                <div class="dropdown-content">
+                  <a href="2024n.html">2024 Scheme</a>
+                  <a href="2019n.html">2019 Scheme</a>
+                </div>
+              </div>
+              <div class="nav-link dropdown">
+                PREV-YR
+                <div class="dropdown-content">
+                  <a href="2024p.html">2024 Scheme</a>
+                  <a href="2019p.html">2019 Scheme</a>
+                </div>
+              </div>
+              <a href="#" class="nav-link" lang="en">UPLOAD</a>
+            </div>
+          </div>
+
+          <!-- Navigation Right -->
+          <div class="navigation-right">
+            <div class="navigation-button-wrap">
+              <a href="#" class="nav-link" lang="en">Sign In</a>
+              <button type="button" class="logout-button">Log Out</button>
+              <!-- Added type="button" to the button for clarity -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
     <div class="container">
         <h2>SGPA Calculator</h2>
         
@@ -69,7 +118,7 @@
             <option value="ECE">Electronics & Communication</option>
             <option value="ME">Mechanical</option>
         </select>
-
+        <br>
         <label for="semester">Select Semester:</label>
         <select id="semester" onchange="updateSubjectsList()">
             <option value="">Choose Semester</option>
@@ -92,6 +141,45 @@
         <button onclick="calculateSGPA()">Calculate SGPA</button>
         <h3 id="result"></h3>
     </div>
+    <footer
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+          background-color: #333;
+          color: white;
+        "
+      >
+        <p style="margin: 0">Copyright © KTU HUB. Developed by ANI</p>
+        <div>
+          <button
+            style="
+              background-color: #4caf50;
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              margin-left: 10px;
+              cursor: pointer;
+            "
+          >
+            Upload NOTES
+          </button>
+          <button
+            style="
+              background-color: #008cba;
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              margin-left: 10px;
+              cursor: pointer;
+            "
+          >
+            SIGN IN
+          </button>
+        </div>
+      </footer>
+  </div>
 
     <script>
         // Subjects database categorized by branch & semester
