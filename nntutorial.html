@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KTU HUB - Your one-stop platform for academic resources and notes.">
+    <title>KTU HUB - Video Tutorials</title>
+    <link rel="stylesheet" href="css/tut_style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-title">Video Tutorials</h2>
+        <div class="content">
+            <h3>Semesters</h3>
+            <ul class="semester-list">
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem1')">Semester 1</button></li>
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem2')">Semester 2</button></li>
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem3')">Semester 3</button></li>
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem4')">Semester 4</button></li>
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem5')">Semester 5</button></li>
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem6')">Semester 6</button></li>
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem7')">Semester 7</button></li>
+                <li><button class="semester-btn" onclick="navigateToSubjects('sem8')">Semester 8</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function navigateToSubjects(semester) {
+            window.location.href = `subjects.html?semester=${semester}`;
+        }
+    </script>
+</body>
+</html>

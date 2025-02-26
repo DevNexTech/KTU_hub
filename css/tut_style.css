@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1000px; /* Increased width */
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ---------- Index Page: Semesters ---------- */
+.semester-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between boxes */
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.semester-btn {
+    width: 100%;
+    max-width: 180px; /* Adjust button width */
+    padding: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.semester-btn:hover {
+    background: #0056b3;
+}
+
+/* ---------- Subjects Page ---------- */
+.subject-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.subject-btn {
+    width: 80%;
+    max-width: 600px; /* Properly fits the page */
+    padding: 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+}
+
+.subject-btn:hover {
+    background: #218838;
+}
+
+/* ---------- Modules Page ---------- */
+.modules {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between boxes */
+    padding-top: 10px;
+}
+
+.module {
+    width: 150px; /* Fixed width */
+    padding: 15px;
+    background: #ffc107;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.module:hover {
+    background: #e0a800;
+}
