@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .faq {
+            margin: 20px 0;
+        }
+        .question {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq">
+            <div class="question">What services do you offer?</div>
+            <div class="answer">We offer web development, SEO optimization, and digital marketing services.</div>
+        </div>
+        
+        <div class="faq">
+            <div class="question">How can I contact support?</div>
+            <div class="answer">You can reach our support team via email at support@example.com or through our Contact Us page.</div>
+        </div>
+        
+        <div class="faq">
+            <div class="question">What is your refund policy?</div>
+            <div class="answer">We offer a full refund within the first 14 days if you're not satisfied with our services.</div>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.nextElementSibling.style.display = 
+                    this.nextElementSibling.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
