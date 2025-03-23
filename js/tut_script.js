@@ -1,8 +1,8 @@
 const subjectsData = {
-    sem1: ["Maths", "Physics", "Chemistry"],
+    sem1: ["LA&C", "Eng.Graphics","Basics of Electrical & Electronics","Basics of Civil & Mechanical","Eng.Mechanics","Life Skills","Eng.Physics", "Eng.Chemistry"],
     sem2: ["Data Structures", "OOP", "Discrete Maths"],
     sem3: ["DBMS", "OS", "CN"],
-    sem5: ["WAD", "FLAT"],
+    sem5: ["WAD", "FLAT","MSE","DCN","DM","OS"],
     sem6: ["AI", "Cyber Security"],
     sem8: ["Cloud Computing", "Blockchain"],
 };
