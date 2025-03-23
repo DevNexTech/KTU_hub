@@ -50,9 +50,8 @@
           <!-- Navigation Right -->
           <div class="navigation-right">
             <div class="navigation-button-wrap">
-              <a href="#" class="nav-link" lang="en">Sign In</a>
-              <button type="button" class="logout-button">Log Out</button>
-              <!-- Added type="button" to the button for clarity -->
+              <a href="pages/signin.html" class="nav-link" lang="en">Sign In</a>
+              <button type="button" class="logout-button" onclick="logout()">Log Out</button>
             </div>
           </div>
         </div>
@@ -103,26 +102,32 @@
       <div class="footer">
         <div class="footer-container">
           <div class="footer-left">
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">FAQ</a>
+            <a href="pages/contact.html">Contact Us</a>
+            <a href="pages/privacy.html">Privacy Policy</a>
+            <a href="pages/terms.html">Terms of Service</a>
+            <a href="pages/faq.html">FAQ</a>
           </div>
           <div class="footer-right">
             <div class="footer-signup">
-              <button type="button">Sign Up</button>
+              <a href="pages/signup.html">
+                <button type="button">Sign Up</button>
+              </a>
               <!-- Added type="button" for button clarity -->
             </div>
             <div class="footer-brand">
-              <!-- Placeholder for social media icons -->
-              <a href="#" aria-label="Facebook" class="social-icon">
-                <img src="IMG/facebook.png" alt="facebook" class="footer-icons">
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="social-icon">
+                <img src="IMG/facebook.png" alt="Facebook" class="footer-icons">
               </a>
-              <a href="#" aria-label="Youtube" class="social-icon">
-                <img src="IMG/youtube.png" alt="youtube" class="footer-icons">
+            
+              <!-- YouTube -->
+              <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube" class="social-icon">
+                <img src="IMG/youtube.png" alt="YouTube" class="footer-icons">
               </a>
-              <a href="#" aria-label="Instagram" class="social-icon">
-                <img src="IMG/instagram.png" alt="instagram" class="footer-icons">
+            
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="social-icon">
+                <img src="IMG/instagram.png" alt="Instagram" class="footer-icons">
               </a>
             </div>
             <p style="color: aliceblue; margin: 0">Copyright © KTU HUB. Developed by ANI</p>
@@ -132,8 +137,56 @@
     </footer>
   </div>
   <script>
-    (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "yRt7tsHRaiSWRIfB1xhuQ"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
-  </script>
+    (function () {
+      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        window.chatbase = (...arguments) => {
+          if (!window.chatbase.q) {
+            window.chatbase.q = [];
+          }
+          window.chatbase.q.push(arguments);
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if (prop === "q") {
+              return target.q;
+            }
+            return (...args) => target(prop, ...args);
+          },
+        });
+      }
+  
+      const onLoad = function () {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "yRt7tsHRaiSWRIfB1xhuQ";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script);
+      };
+  
+      if (document.readyState === "complete") {
+        onLoad();
+      } else {
+        window.addEventListener("load", onLoad);
+      }
+    })();
+  
+    // Check if the user is signed in
+    window.onload = function () {
+      let user = sessionStorage.getItem("user");
+  
+      if (user) {
+        document.querySelector(".navigation-right").innerHTML = `
+          <span>Welcome, ${user}!</span>
+          <button type="button" class="logout-button" onclick="logout()">Log Out</button>
+        `;
+      }
+    };
+  
+    function logout() {
+      sessionStorage.removeItem("user"); // Clear session
+      window.location.href = "pages/signin.html"; // Redirect to sign-in page
+    }
+  </script>  
 </body>
 
 </html>
