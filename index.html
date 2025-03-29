@@ -1,192 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KTU HUB - Your one-stop platform for academic resources and notes."
+    />
+    <title>KTU HUB</title>
+    <link rel="stylesheet" href="css/footernormal.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Assuming your CSS file is named style.css -->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="KTU HUB - Your one-stop platform for academic resources and notes." />
-  <title>KTU HUB</title>
-  <link rel="stylesheet" href="css/footernormal.css" />
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- Assuming your CSS file is named style.css -->
-</head>
-
-<body>
-  <div class="main-content">
-    <header>
-      <div class="navbar">
-        <div class="container-navigation">
-          <!-- Navigation Left -->
-          <div class="navigation-left">
-            <div class="brand">
-              <img src="IMG/ktuhub.png" alt="KTU HUB Logo" class="logo" />
-              <!-- Add alt text to the image for accessibility -->
-            </div>
-          </div>
-
-          <!-- Navigation Middle -->
-          <div class="navigation-middle">
-            <div class="nav-menu">
-              <a href="index.html" class="nav-link" lang="en">HOME</a>
-              <div class="nav-link dropdown">
-                NOTES
-                <div class="dropdown-content">
-                  <a href="2024n.html">2024 Scheme</a>
-                  <a href="2019n.html">2019 Scheme</a>
-                </div>
+  <body>
+    <div class="main-content">
+      <header>
+        <div class="navbar">
+          <div class="container-navigation">
+            <!-- Navigation Left -->
+            <div class="navigation-left">
+              <div class="brand">
+                <img src="IMG/ktuhub.png" alt="KTU HUB Logo" class="logo" />
+                <!-- Add alt text to the image for accessibility -->
               </div>
-              <div class="nav-link dropdown">
-                PREV-YR
-                <div class="dropdown-content">
-                  <a href="2024py.html">2024 Scheme</a>
-                  <a href="2019py.html">2019 Scheme</a>
+            </div>
+
+            <!-- Navigation Middle -->
+            <div class="navigation-middle">
+              <div class="nav-menu">
+                <a href="index.html" class="nav-link" lang="en">HOME</a>
+                <div class="nav-link dropdown">
+                  NOTES
+                  <div class="dropdown-content">
+                    <a href="2024n.html">2024 Scheme</a>
+                    <a href="2019n.html">2019 Scheme</a>
+                  </div>
                 </div>
+                <div class="nav-link dropdown">
+                  PREV-YR
+                  <div class="dropdown-content">
+                    <a href="2024p.html">2024 Scheme</a>
+                    <a href="2019p.html">2019 Scheme</a>
+                  </div>
+                </div>
+                <a href="#" class="nav-link" lang="en">UPLOAD</a>
               </div>
-              <a href="#" class="nav-link" lang="en">UPLOAD</a>
+            </div>
+
+            <!-- Navigation Right -->
+            <div class="navigation-right">
+              <div class="navigation-button-wrap">
+                <a href="#" class="nav-link" lang="en">Sign In</a>
+                <button type="button" class="logout-button">Log Out</button>
+                <!-- Added type="button" to the button for clarity -->
+              </div>
             </div>
           </div>
-
-          <!-- Navigation Right -->
-          <div class="navigation-right">
-            <div class="navigation-button-wrap">
-              <a href="pages/signin.html" class="nav-link" lang="en">Sign In</a>
-              <button type="button" class="logout-button" onclick="logout()">Log Out</button>
+        </div>
+      </header>
+      <main>
+        <div class="hero">
+          <div class="h-container">
+            <div class="h-left">
+              <h1>Academic <br />Resources</h1>
+            </div>
+            <div class="h-right">
+              <img
+                src="IMG/folder.png"
+                alt="Academic Resources Folder"
+                class="hero-image"
+              />
+              <!-- Added descriptive alt text for better accessibility -->
             </div>
           </div>
         </div>
-      </div>
-    </header>
-    <main>
-      <div class="hero">
-        <div class="h-container">
-          <div class="h-left">
-            <h1>Academic <br />Resources</h1>
-          </div>
-          <div class="h-right">
-            <img src="IMG/folder.png" alt="Academic Resources Folder" class="hero-image" />
-            <!-- Added descriptive alt text for better accessibility -->
-          </div>
-        </div>
-      </div>
-      <section class="stats">
-        <div class="stat-box">
-          <h3>1K+</h3>
-          <p>AI-Bot Users</p>
-          <img src="IMG/bot.png" alt="Active users icon">
-        </div>
-        <div class="stat-box">
-          <h3>100+</h3>
-          <p>Notes Uploaded</p>
-          <a href="2019n.html"><img src="IMG/book.png" alt="Notes uploaded icon"></a>
-        </div>
-        <div class="stat-box">
-          <h3>6M+</h3>
-          <p>Chat Users</p>
-          <img src="IMG/chat.png" alt="Documents uploaded icon"></a>
-        </div>
-        <div class="stat-box">
-          <h3>Tutorial</h3>
-          <p>By youtube tutors</p>
-          <a href="tut_page/tut_index.html"><img src="IMG/tutorial.png" alt="Request access icon">
-        </div>
-      </section>
+        <div id="tools">
+          <h2>Tools</h2>
+          <div class="tools-container">
+            <!-- SGPA Calculator -->
+            <a href="sgpa-calculator.html" class="tool-card">
+              <div class="tool-text">SGPA</div>
+              <img src="IMG/calculating.png" alt="SGPA" class="tool-icon" />
+            </a>
 
-      <div class="utility-links">
-        <h3>Additional Tools</h3>
-        <a href="sgpa.html" class="utility-link">SGPA Calculator</a>
-      </div>
+            <!-- Notes -->
+            <a href="notes.html" class="tool-card">
+              <div class="tool-text">Notes</div>
+              <img src="IMG/notes.png" alt="Notes" class="tool-icon" />
+            </a>
 
-    </main>
-    <footer>
-      <div class="footer">
-        <div class="footer-container">
-          <div class="footer-left">
-            <a href="EXTRAS/contactus.html">Contact Us</a>
-            <a href="EXTRAS/privacy.html">Privacy Policy</a>
-            <a href="EXTRAS/termsofservice.html">Terms of Service</a>
-            <a href="EXTRAS/faq.html">FAQ</a>
+            <!-- Tutorials -->
+            <a href="tutorials.html" class="tool-card">
+              <div class="tool-text">Tutorials</div>
+              <img src="IMG/teacher.png" alt="Tutorials" class="tool-icon" />
+            </a>
+
+            <!-- Chat System -->
+            <a href="chat.html" class="tool-card">
+              <div class="tool-text">Chat</div>
+              <img src="IMG/chatapp.png" alt="Chat" class="tool-icon" />
+            </a>
+
+            <!-- Extra Tool 1 -->
+            <a href="extra-tool1.html" class="tool-card">
+              <div class="tool-text">Tool 1</div>
+              <img src="IMG/paper.png" alt="Tool 1" class="tool-icon" />
+            </a>
+
+            <!-- Extra Tool 2 -->
+            <a href="extra-tool2.html" class="tool-card">
+              <div class="tool-text">Tool 2</div>
+              <img src="icons/tool2.png" alt="Tool 2" class="tool-icon" />
+            </a>
           </div>
-          <div class="footer-right">
-            <div class="footer-signup">
-              <a href="pages/signup.html">
+        </div>
+
+        <section class="stats">
+          <div class="stat-box">
+            <h3>1K+</h3>
+            <p>AI-Bot Users</p>
+            <img src="IMG/bot.png" alt="Active users icon" />
+          </div>
+          <div class="stat-box">
+            <h3>100+</h3>
+            <p>Notes Uploaded</p>
+            <a href="2019n.html"
+              ><img src="IMG/book.png" alt="Notes uploaded icon"
+            /></a>
+          </div>
+          <div class="stat-box">
+            <h3>6M+</h3>
+            <p>Chat Users</p>
+            <a href="tutorial.html"
+              ><img src="IMG/chat.png" alt="Documents uploaded icon"
+            /></a>
+          </div>
+          <div class="stat-box">
+            <h3>Tutorial</h3>
+            <p>By youtube tutors</p>
+            <a href="tutorial.html"
+              ><img src="IMG/tutorial.png" alt="Request access icon"
+            /></a>
+          </div>
+        </section>
+
+        <div class="utility-links">
+          <h3>Additional Tools</h3>
+          <a href="sgpa.html" class="utility-link">SGPA Calculator</a>
+        </div>
+      </main>
+      <footer>
+        <div class="footer">
+          <div class="footer-container">
+            <div class="footer-left">
+              <a href="EXTRAS/contactus.html">Contact Us</a>
+              <a href="EXTRAS/privacy.html">Privacy Policy</a>
+              <a href="EXTRAS/termsofservice.html">Terms of Service</a>
+              <a href="EXTRAS/faq.html">FAQ</a>
+            </div>
+            <div class="footer-right">
+              <div class="footer-signup">
                 <button type="button">Sign Up</button>
-              </a>
-              <!-- Added type="button" for button clarity -->
+                <!-- Added type="button" for button clarity -->
+              </div>
+              <div class="footer-brand">
+                <!-- Placeholder for social media icons -->
+                <a href="#" aria-label="Facebook" class="social-icon">
+                  <img
+                    src="IMG/facebook.png"
+                    alt="facebook"
+                    class="footer-icons"
+                  />
+                </a>
+                <a href="#" aria-label="Youtube" class="social-icon">
+                  <img
+                    src="IMG/youtube.png"
+                    alt="youtube"
+                    class="footer-icons"
+                  />
+                </a>
+                <a href="#" aria-label="Instagram" class="social-icon">
+                  <img
+                    src="IMG/instagram.png"
+                    alt="instagram"
+                    class="footer-icons"
+                  />
+                </a>
+              </div>
+              <p style="color: aliceblue; margin: 0">
+                Copyright © KTU HUB. Developed by VJCET
+              </p>
             </div>
-            <div class="footer-brand">
-              <!-- Facebook -->
-              <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="social-icon">
-                <img src="IMG/facebook.png" alt="Facebook" class="footer-icons">
-              </a>
-            
-              <!-- YouTube -->
-              <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube" class="social-icon">
-                <img src="IMG/youtube.png" alt="YouTube" class="footer-icons">
-              </a>
-            
-              <!-- Instagram -->
-              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="social-icon">
-                <img src="IMG/instagram.png" alt="Instagram" class="footer-icons">
-              </a>
-            </div>
-            <p style="color: aliceblue; margin: 0">Copyright © KTU HUB. Developed by VJCET</p>
           </div>
         </div>
-      </div>
-    </footer>
-  </div>
-  <script>
-    (function () {
-      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-        window.chatbase = (...arguments) => {
-          if (!window.chatbase.q) {
-            window.chatbase.q = [];
-          }
-          window.chatbase.q.push(arguments);
-        };
-        window.chatbase = new Proxy(window.chatbase, {
-          get(target, prop) {
-            if (prop === "q") {
-              return target.q;
+      </footer>
+    </div>
+    <script>
+      (function () {
+        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+          window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = [];
             }
-            return (...args) => target(prop, ...args);
-          },
-        });
-      }
-  
-      const onLoad = function () {
-        const script = document.createElement("script");
-        script.src = "https://www.chatbase.co/embed.min.js";
-        script.id = "yRt7tsHRaiSWRIfB1xhuQ";
-        script.domain = "www.chatbase.co";
-        document.body.appendChild(script);
-      };
-  
-      if (document.readyState === "complete") {
-        onLoad();
-      } else {
-        window.addEventListener("load", onLoad);
-      }
-    })();
-  
-    // Check if the user is signed in
-    window.onload = function () {
-      let user = sessionStorage.getItem("user");
-  
-      if (user) {
-        document.querySelector(".navigation-right").innerHTML = `
-          <span>Welcome, ${user}!</span>
-          <button type="button" class="logout-button" onclick="logout()">Log Out</button>
-        `;
-      }
-    };
-  
-    function logout() {
-      sessionStorage.removeItem("user"); // Clear session
-      window.location.href = "pages/signin.html"; // Redirect to sign-in page
-    }
-  </script>  
-</body>
-
+            window.chatbase.q.push(arguments);
+          };
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === "q") {
+                return target.q;
+              }
+              return (...args) => target(prop, ...args);
+            },
+          });
+        }
+        const onLoad = function () {
+          const script = document.createElement("script");
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.id = "yRt7tsHRaiSWRIfB1xhuQ";
+          script.domain = "www.chatbase.co";
+          document.body.appendChild(script);
+        };
+        if (document.readyState === "complete") {
+          onLoad();
+        } else {
+          window.addEventListener("load", onLoad);
+        }
+      })();
+    </script>
+  </body>
 </html>

@@ -38,7 +38,6 @@ body {
   max-width: 100%; /* Full width on mobile */
   margin-top: 20px; /* Added spacing */
   margin-left: 20rem;
-  
 }
 
 .h-right img {
@@ -72,6 +71,87 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* TOOLS SECTION */
+#tools {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+  position: relative;
+}
+
+#tools h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 70px;
+}
+
+/* Circular Tool Layout */
+.tools-container {
+  width: 420px; /* Adjusted for better fit */
+  height: 420px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.tool-card {
+  width: 100px; /* Reduced size for better fit */
+  height: 100px;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.tool-card .tool-icon {
+  width: 60px; /* Adjusted image size */
+  height: 60px;
+}
+
+.tool-text {
+  font-size: 19px;
+  color: #000000;
+  margin-top: 5px;
+}
+
+/* Hover Effect */
+.tool-card:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Positioning the tool cards in a circular manner */
+.tool-card:nth-child(1) {
+  top: 9%;
+  left: 49%;
+}
+.tool-card:nth-child(2) {
+  top: 34%;
+  right: -8%;
+}
+.tool-card:nth-child(3) {
+  bottom: 0%;
+  right: -7%;
+}
+.tool-card:nth-child(4) {
+  bottom: 25%;
+  left: 50%;
+}
+.tool-card:nth-child(5) {
+  bottom: 0%;
+  left: 15%;
+}
+.tool-card:nth-child(6) {
+  top: 34%;
+  left: 13%;
 }
 
 /* Stats Section */
