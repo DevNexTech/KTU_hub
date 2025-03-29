@@ -128,7 +128,7 @@ body {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Positioning the tool cards in a circular manner */
+/* Positioning the tool cards in a circular */
 .tool-card:nth-child(1) {
   top: 9%;
   left: 49%;
