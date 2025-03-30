@@ -74,8 +74,20 @@ body {
 }
 
 /* TOOLS SECTION */
+
+.tools-wrapper {
+  max-width: 700px;
+  margin: 90px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 55px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 5px solid #ddd;
+}
+
 #tools {
-  padding: 50px 0;
+  padding: 10px 0;
   background-color: #f9f9f9;
   text-align: center;
   position: relative;
@@ -83,6 +95,7 @@ body {
 
 #tools h2 {
   font-size: 3rem;
+  text-decoration: underline;
   color: #333;
   margin-bottom: 70px;
 }
@@ -96,8 +109,8 @@ body {
 }
 
 .tool-card {
-  width: 100px; /* Reduced size for better fit */
-  height: 100px;
+  width: 140px; /* Reduced size for better fit */
+  height: 140px;
   background: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
@@ -135,23 +148,23 @@ body {
 }
 .tool-card:nth-child(2) {
   top: 34%;
-  right: -8%;
+  right: -23%;
 }
 .tool-card:nth-child(3) {
-  bottom: 0%;
-  right: -7%;
+  bottom: -13%;
+  right: -13%;
 }
 .tool-card:nth-child(4) {
-  bottom: 25%;
+  bottom: 17%;
   left: 50%;
 }
 .tool-card:nth-child(5) {
-  bottom: 0%;
+  bottom: -13%;
   left: 15%;
 }
 .tool-card:nth-child(6) {
   top: 34%;
-  left: 13%;
+  left: 8%;
 }
 
 /* Stats Section */
