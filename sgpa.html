@@ -291,40 +291,39 @@
       }
 
       function addRow() {
-        if (Object.keys(availableSubjects).length === 0) {
-          alert("Please select a valid branch and semester!");
-          return;
-        }
+    if (Object.keys(availableSubjects).length === 0) {
+        alert("Please select a valid branch and semester!");
+        return;
+    }
 
-        let table = document.getElementById("sgpaTable");
-        let row = table.insertRow();
-        row.innerHTML = `
-                <td>
-                    <select onchange="updateCredits(this)">
-                        <option value="">Select Subject</option>
-                        ${Object.keys(availableSubjects)
-                          .map(
+    let table = document.getElementById("sgpaTable");
+    let row = table.insertRow();
+    row.innerHTML = `
+            <td>
+                <select onchange="updateCredits(this)">
+                    <option value="">Select Subject</option>
+                    ${Object.keys(availableSubjects)
+                        .map(
                             (sub) => `<option value="${sub}">${sub}</option>`
-                          )
-                          .join("")}
-                    </select>
-                </td>
-                <td><input type="number" readonly></td>
-                <td>
-                    <select>
-                        <option value="10">S(10)</option>
-                        <option value="9">A(9)</option>
-                        <option value="8">B(8)</option>
-                        <option value="7">C(7)</option>
-                        <option value="6">D(6)</option>
-                        <option value="5">E(5)</option>
-                        <option value="0">F(0)</option>
-                    </select>
-                </td>
-                <td><button onclick="removeRow(this)">Remove</button></td>
-            `;
-      }
-
+                        )
+                        .join("")}
+                </select>
+            </td>
+            <td><input type="number" readonly></td>
+            <td>
+                <select>
+                    <option value="10">S(10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8.5">A (8.5)</option>
+                    <option value="8">B+ (8)</option>
+                    <option value="7">B (7)</option>
+                    <option value="6">C (6)</option>
+                    <option value="0">F (0)</option>
+                </select>
+            </td>
+            <td><button onclick="removeRow(this)">Remove</button></td>
+        `;
+}
       function updateCredits(selectElement) {
         let row = selectElement.parentNode.parentNode;
         let creditInput = row.cells[1].getElementsByTagName("input")[0];
