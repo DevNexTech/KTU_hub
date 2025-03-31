@@ -367,3 +367,95 @@ body {
     padding: 8px 16px;
   }
 }
+.authors {
+    text-align: center;
+    background: linear-gradient(135deg, #6c5ce7, #4834d4);
+    color: white;
+    padding: 40px 20px;
+    margin-top: 30px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.authors h3 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Author List Styling */
+.author-list {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Individual Author Card */
+.author {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px;
+}
+
+.author:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Profile Image */
+.author img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.author:hover img {
+    transform: scale(1.1);
+}
+
+/* Name & Role */
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.role {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Mobile Compatibility */
+@media (max-width: 600px) {
+    .author-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .author {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .author img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .authors {
+        padding: 30px 15px;
+    }
+}
+
