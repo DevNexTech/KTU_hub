@@ -10,7 +10,80 @@
     <title>KTU HUB</title>
     <link rel="stylesheet" href="css/footernormal.css" />
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="notesstyle.css" />
+    <style>
+      .heading {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .heading h1 {
+        font-size: 34px;
+        font-weight: bold;
+        color: #333;
+      }
+      .heading p {
+        font-size: 28px;
+        color: #666;
+      }
+      .sem {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 75vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 20px;
+        margin-bottom: 250px;
+      }
+
+      .tile {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        /* Use flexbox to align items vertically */
+        flex-direction: column;
+        /* Stack image and text vertically */
+        justify-content: center;
+        /* Vertically center the content */
+        align-items: center;
+      }
+
+      .tile img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        border-radius: 20%;
+        /* Circular image */
+        margin-bottom: 15px;
+      }
+
+      .tile:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      .tile span {
+        font-size: 26px;
+        font-weight: bold;
+        color: #333;
+      }
+      a {
+        text-decoration: none; /* Remove default underline from links */
+        color: inherit; /* Inherit text color */
+      }
+    </style>
     <!-- Assuming your CSS file is named style.css -->
   </head>
 
@@ -32,14 +105,14 @@
               <div class="nav-menu">
                 <a href="index.html" class="nav-link" lang="en">HOME</a>
                 <div class="nav-link dropdown">
-                 <a href="notes.html" class="nav-link" lang="en">NOTES</a>
+                  NOTES
                   <div class="dropdown-content">
                     <a href="2024n.html">2024 Scheme</a>
                     <a href="2019n.html">2019 Scheme</a>
                   </div>
                 </div>
                 <div class="nav-link dropdown">
-                  <a href="prevyr.html" class="nav-link" lang="en">PREV-YR</a>
+                  PREV-YR
                   <div class="dropdown-content">
                     <a href="2024py.html">2024 Scheme</a>
                     <a href="2019py.html">2019 Scheme</a>
@@ -61,123 +134,20 @@
         </div>
       </header>
       <main>
-        <div class="hero">
-          <div class="h-container">
-            <div class="h-left">
-              <h1>Academic <br />Resources</h1>
-            </div>
-            <div class="h-right">
-              <img
-                src="IMG/folder.png"
-                alt="Academic Resources Folder"
-                class="hero-image"
-              />
-              <!-- Added descriptive alt text for better accessibility -->
-            </div>
-          </div>
+        <div class="heading">
+          <h1>KTU PrevYR</h1>
+          <p>Select your Scheme</p>
         </div>
-        <div class="tools-wrapper">
-          <div id="tools">
-            <h2>Tools</h2>
-            <div class="tools-container">
-              <!-- SGPA Calculator -->
-              <a href="sgpa.html" class="tool-card">
-                <div class="tool-text">SGPA</div>
-                <img src="IMG/calculating.png" alt="SGPA" class="tool-icon" />
-              </a>
-
-              <!-- Notes -->
-              <a href="notes.html" class="tool-card">
-                <div class="tool-text">Notes</div>
-                <img src="IMG/notes.png" alt="Notes" class="tool-icon" />
-              </a>
-
-              <!-- Tutorials -->
-              <a
-                href="tut_page/tut_index.html"
-                target="_blank"
-                class="tool-card"
-              >
-                <div class="tool-text">Tutorials</div>
-                <img src="IMG/teacher.png" alt="Tutorials" class="tool-icon" />
-              </a>
-
-              <!-- Chat System -->
-              <a
-                href="https://message-me-react.vercel.app/"
-                target="_blank"
-                class="tool-card"
-              >
-                <div class="tool-text">ChatAPP</div>
-                <img src="IMG/chatapp.png" alt="Chat" class="tool-icon" />
-              </a>
-
-              <!-- Extra Tool 1 -->
-              <a href="prevyr.html" class="tool-card">
-                <div class="tool-text">PrevYR</div>
-                <img src="IMG/paper.png" alt="previousyr" class="tool-icon" />
-              </a>
-
-              <!-- Extra Tool 2 -->
-              <a href="calendar.html" class="tool-card">
-                <div class="tool-text">Calendar</div>
-                <img src="IMG/schedule.png" alt="calendar" class="tool-icon" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <section class="stats">
-          <div class="stat-box">
-            <h3>1K+</h3>
-            <p>AI-Bot Users</p>
-            <img src="IMG/bot.png" alt="Active users icon" />
-          </div>
-          <div class="stat-box">
-            <h3>100+</h3>
-            <p>Notes Uploaded</p>
-            <a href="2019n.html"
-              ><img src="IMG/book.png" alt="Notes uploaded icon"
-            /></a>
-          </div>
-          <div class="stat-box">
-            <h3>6M+</h3>
-            <p>Chat Users</p>
-            <a href="tutorial.html"
-              ><img src="IMG/chat.png" alt="Documents uploaded icon"
-            /></a>
-          </div>
-          <div class="stat-box">
-            <h3>Tutorial</h3>
-            <p>By youtube tutors</p>
-            <a href="tutorial.html"
-              ><img src="IMG/tutorial.png" alt="Request access icon"
-            /></a>
-          </div>
-        </section>
-
-        <div class="utility-links">
-          <h3>Additional Tools</h3>
-          <a href="sgpa.html" class="utility-link">STUDY SCHEDULER</a>
-        </div>
-        <div class="authors">
-          <h3>CREATORS</h3>
-          <div class="author-list">
-            <div class="author">
-              <img src="IMG/ai.png" alt="Author 1" />
-              <p>Creator 1</p>
-            </div>
-            <div class="author">
-              <img src="IMG/ai.png" alt="Author 2" />
-              <p>Creator 2</p>
-            </div>
-            <div class="author">
-              <img src="IMG/ai.png" alt="Author 3" />
-              <p>Creator 3</p>
-            </div>
-            <div class="author">
-              <img src="IMG/ai.png" alt="Author 4" />
-              <p>Creator 4</p>
-            </div>
+        <div class="sem">
+          <div class="container">
+            <a href="2019py.html" class="tile">
+              <img src="IMG/2019.png" alt="2019" />
+              <span>2019</span>
+            </a>
+            <a href="2024py.html" class="tile">
+              <img src="IMG/2024.png" alt="2024" />
+              <span>2024</span>
+            </a>
           </div>
         </div>
       </main>
