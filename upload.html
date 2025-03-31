@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, rgb(102, 1, 135), #5114a6);
+            margin: 0;
+        }
+        .upload-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        select, textarea, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+        .upload-label {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .upload-label:hover {
+            background: #0056b3;
+        }
+        .file-name {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            background: #28a745;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Upload Your Notes</h2>
+        <select id="branch">
+            <option value="">Select Branch</option>
+            <option value="IT">IT</option>
+            <option value="CS">CS</option>
+            <option value="AD">AD</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="EC">EC</option>
+            <option value="EEE">EEE</option>
+            <option value="CG">CG</option>
+        </select>
+        <select id="semester">
+            <option value="">Select Semester</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <input type="text" id="subject" placeholder="Subject">
+        <select id="module">
+            <option value="">Select Module</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <textarea id="description" placeholder="Enter a brief description of the notes..."></textarea>
+        <label for="file-upload" class="upload-label">Choose File</label>
+        <input type="file" id="file-upload" onchange="displayFileName()">
+        <p class="file-name" id="file-name">No file chosen</p>
+        <button onclick="uploadFile()">Upload</button>
+    </div>
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('file-upload');
+            const fileName = document.getElementById('file-name');
+            fileName.textContent = fileInput.files.length ? fileInput.files[0].name : 'No file chosen';
+        }
+        function uploadFile() {
+            const branch = document.getElementById('branch').value;
+            const semester = document.getElementById('semester').value;
+            const subject = document.getElementById('subject').value;
+            const module = document.getElementById('module').value;
+            const description = document.getElementById('description').value;
+            const fileInput = document.getElementById('file-upload');
+            
+            if (!branch || !semester || !subject || !module || !description || !fileInput.files.length) {
+                alert('Please fill in all fields and select a file!');
+                return;
+            }
+            alert('File uploaded successfully!');
+        }
+    </script>
+</body>
+</html>

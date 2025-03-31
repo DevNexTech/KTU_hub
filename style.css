@@ -266,8 +266,8 @@ body {
 .utility-link {
   display: block;
   padding: 10px;
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
+  background: linear-gradient(135deg, #6c5ce7, #4834d4);
+  color: rgb(255, 241, 241);
   text-decoration: none;
   font-size: 14px; /* Adjusted for mobile */
   font-weight: bold;
