@@ -1,147 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SGPA Calculator</title>
     <link rel="stylesheet" href="css/footersmall.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="style.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+      @media (max-width: 768px) {
         .container {
-            width: 50%;
-            margin: 50px auto;
-            margin-bottom: 300px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          width: 90%; /* Adjust width for smaller screens */
+          margin: 20px auto;
+          padding: 15px;
         }
+
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+          font-size: 14px; /* Reduce font size for better fit */
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
+
+        th,
+        td {
+          padding: 8px;
         }
-        th {
-            background: #6c5ce7;
-            color: white;
+
+        select,
+        input {
+          width: 100%; /* Make input elements full width */
         }
+
         button {
-            background: #6c5ce7;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 5px;
+          width: 100%; /* Full width buttons for easier access */
+          padding: 12px;
         }
-        button:hover {
-            background: #4834d4;
+
+        .navbar {
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
         }
-        select, input {
-            padding: 5px;
-            width: 90%;
+
+        .nav-menu {
+          flex-direction: column;
+          text-align: center;
         }
-        input[readonly] {
-            background-color: #f0f0f0;
-            border: none;
-            text-align: center;
+
+        .nav-link {
+          display: block;
+          padding: 10px;
         }
+
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 50%;
+        margin: 50px auto;
+        margin-bottom: 300px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background: #6c5ce7;
+        color: white;
+      }
+      button {
+        background: #6c5ce7;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background: #4834d4;
+      }
+      select,
+      input {
+        padding: 5px;
+        width: 90%;
+      }
+      input[readonly] {
+        background-color: #f0f0f0;
+        border: none;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
-     <div class="main-content">
-    <header>
-      <div class="navbar">
-        <div class="container-navigation">
-          <!-- Navigation Left -->
-          <div class="navigation-left">
-            <div class="brand">
-              <img src="IMG/ktuhub.png" alt="KTU HUB Logo" class="logo" />
-              <!-- Add alt text to the image for accessibility -->
-            </div>
-          </div>
-
-          <!-- Navigation Middle -->
-          <div class="navigation-middle">
-            <div class="nav-menu">
-              <a href="index.html" class="nav-link" lang="en">HOME</a>
-              <div class="nav-link dropdown">
-                NOTES
-                <div class="dropdown-content">
-                  <a href="2024n.html">2024 Scheme</a>
-                  <a href="2019n.html">2019 Scheme</a>
-                </div>
+  </head>
+  <body>
+    <div class="main-content">
+      <header>
+        <div class="navbar">
+          <div class="container-navigation">
+            <!-- Navigation Left -->
+            <div class="navigation-left">
+              <div class="brand">
+                <img src="IMG/ktuhub.png" alt="KTU HUB Logo" class="logo" />
+                <!-- Add alt text to the image for accessibility -->
               </div>
-              <div class="nav-link dropdown">
-                PREV-YR
-                <div class="dropdown-content">
-                  <a href="2024p.html">2024 Scheme</a>
-                  <a href="2019p.html">2019 Scheme</a>
-                </div>
-              </div>
-              <a href="#" class="nav-link" lang="en">UPLOAD</a>
             </div>
-          </div>
 
-          <!-- Navigation Right -->
-          <div class="navigation-right">
-            <div class="navigation-button-wrap">
-              <a href="#" class="nav-link" lang="en">Sign In</a>
-              <button type="button" class="logout-button">Log Out</button>
-              <!-- Added type="button" to the button for clarity -->
+            <!-- Navigation Middle -->
+            <div class="navigation-middle">
+              <div class="nav-menu">
+                <a href="index.html" class="nav-link" lang="en">HOME</a>
+                <div class="nav-link dropdown">
+                  NOTES
+                  <div class="dropdown-content">
+                    <a href="2024n.html">2024 Scheme</a>
+                    <a href="2019n.html">2019 Scheme</a>
+                  </div>
+                </div>
+                <div class="nav-link dropdown">
+                  PREV-YR
+                  <div class="dropdown-content">
+                    <a href="2024p.html">2024 Scheme</a>
+                    <a href="2019p.html">2019 Scheme</a>
+                  </div>
+                </div>
+                <a href="#" class="nav-link" lang="en">UPLOAD</a>
+              </div>
+            </div>
+
+            <!-- Navigation Right -->
+            <div class="navigation-right">
+              <div class="navigation-button-wrap">
+                <a href="#" class="nav-link" lang="en">Sign In</a>
+                <button type="button" class="logout-button">Log Out</button>
+                <!-- Added type="button" to the button for clarity -->
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
-    <div class="container">
+      </header>
+      <div class="container">
         <h2>SGPA Calculator</h2>
-        
+
         <!-- Branch & Semester Selection -->
         <label for="branch">Select Branch:</label>
         <select id="branch" onchange="updateSubjectsList()">
-            <option value="">Choose Branch</option>
-            <option value="IT">Information Technology</option>
-            <option value="ECE">Electronics & Communication</option>
-            <option value="ME">Mechanical</option>
+          <option value="">Choose Branch</option>
+          <option value="IT">Information Technology</option>
         </select>
-        <br>
+        <br />
         <label for="semester">Select Semester:</label>
         <select id="semester" onchange="updateSubjectsList()">
-            <option value="">Choose Semester</option>
-            <option value="5">Semester 5</option>
-            <option value="6">Semester 6</option>
-        <!--<option value="3">Semester 3</option>
+          <option value="">Choose Semester</option>
+          <option value="5">Semester 5</option>
+          <option value="6">Semester 6</option>
+          <!--<option value="3">Semester 3</option>
             <option value="4">Semester 4</option>-->
         </select>
 
         <table id="sgpaTable">
-            <tr>
-                <th>Subject</th>
-                <th>Credits</th>
-                <th>Grade</th>
-                <th>Action</th>
-            </tr>
+          <tr>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Grade</th>
+            <th>Action</th>
+          </tr>
         </table>
 
         <button onclick="addRow()">Add Subject</button>
         <button onclick="calculateSGPA()">Calculate SGPA</button>
         <h3 id="result"></h3>
-    </div>
-    <footer
+      </div>
+      <footer
         style="
           display: flex;
           justify-content: space-between;
@@ -178,104 +222,145 @@
             SIGN IN
           </button>
         </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
 
     <script>
-        // Subjects database categorized by branch & semester
-        const subjectsDatabase = {
-            "IT": {
-                "5": { "WAD(4)": 4, "FLAT(4)": 4, "DCN(4)": 4, "DM(0)": 0, "MSE(1)": 1, "OS(4)": 4, "OSNPLAB(2)": 2, "WADLAB(2)": 2},
-                "6": { "TCP/IP(4)": 4, "AAD(4)": 4, "DS(4)": 4, "DCN(3)": 3, "ELECTIVE(3)": 3, "MINIPJT(3)": 3, "CNLAB(2)": 2 },
-                //"3": { "Algorithms": 4, "Microprocessors": 3, "DBMS": 3 },
-                //"4": { "Operating Systems": 4, "Networks": 3, "Software Engineering": 3 }
-            },
-            "ECE": {
-                "1": { "Mathematics": 4, "Physics": 3, "Basic Electronics": 4 },
-                "2": { "Signals & Systems": 3, "Digital Circuits": 4, "Communication Systems": 3 },
-                "3": { "Microcontrollers": 4, "Embedded Systems": 3, "VLSI Design": 3 },
-                "4": { "Wireless Communication": 3, "Antenna Theory": 3, "Digital Signal Processing": 4 }
-            },
-            "ME": {
-                "1": { "Mathematics": 4, "Physics": 3, "Engineering Graphics": 3 },
-                "2": { "Mechanics": 3, "Thermodynamics": 4, "Fluid Mechanics": 3 },
-                "3": { "Machine Design": 4, "Manufacturing Process": 3, "Heat Transfer": 3 },
-                "4": { "IC Engines": 4, "Robotics": 3, "Mechanical Vibrations": 3 }
+      // Subjects database categorized by branch & semester
+      const subjectsDatabase = {
+        IT: {
+          5: {
+            "WAD(4)": 4,
+            "FLAT(4)": 4,
+            "DCN(4)": 4,
+            "DM(0)": 0,
+            "MSE(1)": 1,
+            "OS(4)": 4,
+            "OSNPLAB(2)": 2,
+            "WADLAB(2)": 2,
+          },
+          6: {
+            "TCP/IP(4)": 4,
+            "AAD(4)": 4,
+            "DS(4)": 4,
+            "DCN(3)": 3,
+            "ELECTIVE(3)": 3,
+            "MINIPJT(3)": 3,
+            "CNLAB(2)": 2,
+          },
+          //"3": { "Algorithms": 4, "Microprocessors": 3, "DBMS": 3 },
+          //"4": { "Operating Systems": 4, "Networks": 3, "Software Engineering": 3 }
+        },
+        ECE: {
+          1: { Mathematics: 4, Physics: 3, "Basic Electronics": 4 },
+          2: {
+            "Signals & Systems": 3,
+            "Digital Circuits": 4,
+            "Communication Systems": 3,
+          },
+          3: { Microcontrollers: 4, "Embedded Systems": 3, "VLSI Design": 3 },
+          4: {
+            "Wireless Communication": 3,
+            "Antenna Theory": 3,
+            "Digital Signal Processing": 4,
+          },
+        },
+        ME: {
+          1: { Mathematics: 4, Physics: 3, "Engineering Graphics": 3 },
+          2: { Mechanics: 3, Thermodynamics: 4, "Fluid Mechanics": 3 },
+          3: {
+            "Machine Design": 4,
+            "Manufacturing Process": 3,
+            "Heat Transfer": 3,
+          },
+          4: { "IC Engines": 4, Robotics: 3, "Mechanical Vibrations": 3 },
+        },
+      };
+
+      let availableSubjects = {}; // Will hold subjects for selected branch & semester
+
+      function updateSubjectsList() {
+        let branch = document.getElementById("branch").value;
+        let semester = document.getElementById("semester").value;
+
+        availableSubjects =
+          (subjectsDatabase[branch] && subjectsDatabase[branch][semester]) ||
+          {};
+      }
+
+      function addRow() {
+    if (Object.keys(availableSubjects).length === 0) {
+        alert("Please select a valid branch and semester!");
+        return;
+    }
+
+    let table = document.getElementById("sgpaTable");
+    let row = table.insertRow();
+    row.innerHTML = `
+            <td>
+                <select onchange="updateCredits(this)">
+                    <option value="">Select Subject</option>
+                    ${Object.keys(availableSubjects)
+                        .map(
+                            (sub) => `<option value="${sub}">${sub}</option>`
+                        )
+                        .join("")}
+                </select>
+            </td>
+            <td><input type="number" readonly></td>
+            <td>
+                <select>
+                    <option value="10">S(10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8.5">A (8.5)</option>
+                    <option value="8">B+ (8)</option>
+                    <option value="7">B (7)</option>
+                    <option value="6">C (6)</option>
+                    <option value="0">F (0)</option>
+                </select>
+            </td>
+            <td><button onclick="removeRow(this)">Remove</button></td>
+        `;
+}
+      function updateCredits(selectElement) {
+        let row = selectElement.parentNode.parentNode;
+        let creditInput = row.cells[1].getElementsByTagName("input")[0];
+        creditInput.value = availableSubjects[selectElement.value] || "";
+      }
+
+      function removeRow(button) {
+        let row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      }
+
+      function calculateSGPA() {
+        let table = document.getElementById("sgpaTable");
+        let rows = table.getElementsByTagName("tr");
+        let totalCredits = 0,
+          totalPoints = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+          let cells = rows[i].getElementsByTagName("td");
+          if (cells.length > 0) {
+            let credits = parseFloat(
+              cells[1].getElementsByTagName("input")[0].value
+            );
+            let grade = parseFloat(
+              cells[2].getElementsByTagName("select")[0].value
+            );
+
+            if (!isNaN(credits) && !isNaN(grade)) {
+              totalCredits += credits;
+              totalPoints += credits * grade;
             }
-        };
-
-        let availableSubjects = {}; // Will hold subjects for selected branch & semester
-
-        function updateSubjectsList() {
-            let branch = document.getElementById("branch").value;
-            let semester = document.getElementById("semester").value;
-            
-            availableSubjects = (subjectsDatabase[branch] && subjectsDatabase[branch][semester]) || {};
+          }
         }
 
-        function addRow() {
-            if (Object.keys(availableSubjects).length === 0) {
-                alert("Please select a valid branch and semester!");
-                return;
-            }
-
-            let table = document.getElementById("sgpaTable");
-            let row = table.insertRow();
-            row.innerHTML = `
-                <td>
-                    <select onchange="updateCredits(this)">
-                        <option value="">Select Subject</option>
-                        ${Object.keys(availableSubjects).map(sub => `<option value="${sub}">${sub}</option>`).join('')}
-                    </select>
-                </td>
-                <td><input type="number" readonly></td>
-                <td>
-                    <select>
-                        <option value="10">S(10)</option>
-                        <option value="9">A(9)</option>
-                        <option value="8">B(8)</option>
-                        <option value="7">C(7)</option>
-                        <option value="6">D(6)</option>
-                        <option value="5">E(5)</option>
-                        <option value="0">F(0)</option>
-                    </select>
-                </td>
-                <td><button onclick="removeRow(this)">Remove</button></td>
-            `;
-        }
-
-        function updateCredits(selectElement) {
-            let row = selectElement.parentNode.parentNode;
-            let creditInput = row.cells[1].getElementsByTagName("input")[0];
-            creditInput.value = availableSubjects[selectElement.value] || "";
-        }
-
-        function removeRow(button) {
-            let row = button.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-
-        function calculateSGPA() {
-            let table = document.getElementById("sgpaTable");
-            let rows = table.getElementsByTagName("tr");
-            let totalCredits = 0, totalPoints = 0;
-
-            for (let i = 1; i < rows.length; i++) {
-                let cells = rows[i].getElementsByTagName("td");
-                if (cells.length > 0) {
-                    let credits = parseFloat(cells[1].getElementsByTagName("input")[0].value);
-                    let grade = parseFloat(cells[2].getElementsByTagName("select")[0].value);
-
-                    if (!isNaN(credits) && !isNaN(grade)) {
-                        totalCredits += credits;
-                        totalPoints += credits * grade;
-                    }
-                }
-            }
-
-            let sgpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : "0.00";
-            document.getElementById("result").innerText = "SGPA: " + sgpa;
-        }
+        let sgpa = totalCredits
+          ? (totalPoints / totalCredits).toFixed(2)
+          : "0.00";
+        document.getElementById("result").innerText = "SGPA: " + sgpa;
+      }
     </script>
-</body>
+  </body>
 </html>

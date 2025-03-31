@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Scheduler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-item {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Study Scheduler</h2>
+        <input type="text" id="task" placeholder="Enter subject/task">
+        <input type="time" id="time">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="task-list" class="task-list"></ul>
+    </div>
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById("task").value;
+            let timeInput = document.getElementById("time").value;
+            if (taskInput === "" || timeInput === "") {
+                alert("Please enter a task and time!");
+                return;
+            }
+            let taskList = document.getElementById("task-list");
+            let li = document.createElement("li");
+            li.className = "task-item";
+            li.innerHTML = `${timeInput} - ${taskInput} <button onclick="completeTask(this)">✔</button>`;
+            taskList.appendChild(li);
+            document.getElementById("task").value = "";
+            document.getElementById("time").value = "";
+        }
+        function completeTask(button) {
+            let taskItem = button.parentElement;
+            taskItem.classList.toggle("completed");
+        }
+    </script>
+</body>
+</html>
