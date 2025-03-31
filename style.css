@@ -410,7 +410,7 @@ body {
     box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Profile Image */
+/* Profile Image*/
 .author img {
     width: 90px;
     height: 90px;
@@ -424,7 +424,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Name & Role */
+/* Name & Role*/
 .name {
     font-size: 18px;
     font-weight: bold;
