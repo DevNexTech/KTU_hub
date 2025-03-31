@@ -1,138 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive 2025 Calendar</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            margin: 20px;
-        }
-        .calendar-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .month-navigation {
-            display: flex;
-            justify-content: space-between;
-            width: 300px;
-            margin-bottom: 10px;
-        }
-        .month-navigation button {
-            padding: 8px 12px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .month {
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            font-size: 14px;
-        }
-        .day, .date {
-            padding: 8px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .date:hover {
-            background: lightblue;
-        }
-        .today {
-            background: #ff5252;
-            color: white;
-        }
-        #selected-date {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        margin: 20px;
+      }
+      .calendar-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .month-navigation {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        margin-bottom: 10px;
+      }
+      .month-navigation button {
+        padding: 8px 12px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .month {
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        font-size: 14px;
+      }
+      .day,
+      .date {
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .date:hover {
+        background: lightblue;
+      }
+      .today {
+        background: #ff5252;
+        color: white;
+      }
+      .event {
+        background: green;
+        color: white;
+      }
+      #selected-date {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
-    <h1>Interactive 2025 Calendar</h1>
+  </head>
+  <body>
+    <h1>KTU 2025 Calendar</h1>
     <div class="calendar-container">
-        <div class="month-navigation">
-            <button onclick="changeMonth(-1)">❮ Prev</button>
-            <h2 id="month-title"></h2>
-            <button onclick="changeMonth(1)">Next ❯</button>
-        </div>
-        <div class="month" id="calendar"></div>
-        <p id="selected-date">Click a date</p>
+      <div class="month-navigation">
+        <button onclick="changeMonth(-1)">❮ Prev</button>
+        <h2 id="month-title"></h2>
+        <button onclick="changeMonth(1)">Next ❯</button>
+      </div>
+      <div class="month" id="calendar"></div>
+      <p id="selected-date">Click a date</p>
     </div>
     <script>
-        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        let currentYear = 2025;
-        let currentMonth = new Date().getMonth();
-        
-        function generateCalendar(year, month) {
-            const calendarDiv = document.getElementById("calendar");
-            calendarDiv.innerHTML = "";
-            document.getElementById("month-title").innerText = `${months[month]} ${year}`;
-            
-            const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-            let firstDay = new Date(year, month, 1).getDay();
-            let lastDate = new Date(year, month + 1, 0).getDate();
-            
-            let daysDiv = document.createElement("div");
-            daysDiv.className = "days";
-            
-            daysOfWeek.forEach(day => {
-                let dayElem = document.createElement("div");
-                dayElem.className = "day";
-                dayElem.innerText = day;
-                daysDiv.appendChild(dayElem);
-            });
-            
-            for (let i = 0; i < firstDay; i++) {
-                let emptyDiv = document.createElement("div");
-                daysDiv.appendChild(emptyDiv);
-            }
-            
-            for (let date = 1; date <= lastDate; date++) {
-                let dateElem = document.createElement("div");
-                dateElem.className = "date";
-                dateElem.innerText = date;
-                dateElem.onclick = () => selectDate(year, month, date);
-                
-                let today = new Date();
-                if (year === today.getFullYear() && month === today.getMonth() && date === today.getDate()) {
-                    dateElem.classList.add("today");
-                }
-                
-                daysDiv.appendChild(dateElem);
-            }
-            
-            calendarDiv.appendChild(daysDiv);
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      let currentYear = 2025;
+      let currentMonth = new Date().getMonth();
+
+      const randomEvents = {
+        "2025-01-15": "Semester Begins",
+        "2025-02-10": "College Sports Day",
+        "2025-02-15": "Tech Fest",
+        "2025-02-20": "Industrial Visit (IV)",
+        "2025-03-25": "Cultural Fest",
+        "2025-04-18": "Project Submission Deadline",
+        "2025-04-25": "University Exam",
+        "2025-05-05": "Lab Exams",
+        "2025-06-30": "Hackathon",
+        "2025-07-20": "Internship Begins",
+        "2025-08-14": "Ethnic Day",
+        "2025-09-07": "Technical Workshop",
+        "2025-10-31": "Halloween Celebration",
+        "2025-11-25": "Convocation Day",
+        "2025-12-24": "Christmas Eve",
+      };
+
+      function generateCalendar(year, month) {
+        const calendarDiv = document.getElementById("calendar");
+        calendarDiv.innerHTML = "";
+        document.getElementById(
+          "month-title"
+        ).innerText = `${months[month]} ${year}`;
+
+        const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let firstDay = new Date(year, month, 1).getDay();
+        let lastDate = new Date(year, month + 1, 0).getDate();
+
+        let daysDiv = document.createElement("div");
+        daysDiv.className = "days";
+
+        daysOfWeek.forEach((day) => {
+          let dayElem = document.createElement("div");
+          dayElem.className = "day";
+          dayElem.innerText = day;
+          daysDiv.appendChild(dayElem);
+        });
+
+        for (let i = 0; i < firstDay; i++) {
+          let emptyDiv = document.createElement("div");
+          daysDiv.appendChild(emptyDiv);
         }
-        
-        function selectDate(year, month, day) {
-            document.getElementById("selected-date").innerText = `Selected Date: ${months[month]} ${day}, ${year}`;
+
+        for (let date = 1; date <= lastDate; date++) {
+          let dateElem = document.createElement("div");
+          dateElem.className = "date";
+          dateElem.innerText = date;
+          dateElem.onclick = () => selectDate(year, month, date);
+
+          let today = new Date();
+          if (
+            year === today.getFullYear() &&
+            month === today.getMonth() &&
+            date === today.getDate()
+          ) {
+            dateElem.classList.add("today");
+          }
+
+          let eventKey = `${year}-${String(month + 1).padStart(
+            2,
+            "0"
+          )}-${String(date).padStart(2, "0")}`;
+          if (randomEvents[eventKey]) {
+            dateElem.classList.add("event");
+            dateElem.setAttribute("title", randomEvents[eventKey]);
+          }
+
+          daysDiv.appendChild(dateElem);
         }
-        
-        function changeMonth(step) {
-            currentMonth += step;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            } else if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-            generateCalendar(currentYear, currentMonth);
+
+        calendarDiv.appendChild(daysDiv);
+      }
+
+      function selectDate(year, month, day) {
+        let eventKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(
+          day
+        ).padStart(2, "0")}`;
+        let eventText = randomEvents[eventKey]
+          ? ` - ${randomEvents[eventKey]}`
+          : "";
+        document.getElementById(
+          "selected-date"
+        ).innerText = `Date: ${months[month]} ${day}, ${year}${eventText}`;
+      }
+
+      function changeMonth(step) {
+        currentMonth += step;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        } else if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
         }
-        
         generateCalendar(currentYear, currentMonth);
+      }
+
+      generateCalendar(currentYear, currentMonth);
     </script>
-</body>
+  </body>
 </html>

@@ -10,7 +10,7 @@
     <title>KTU HUB</title>
     <link rel="stylesheet" href="css/footersmall.css" />
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="notesstyle.css" />
+    <link rel="stylesheet" href="subject.css" />
     <style>
       .heading {
         text-align: center;
@@ -28,7 +28,6 @@
       .sem {
         min-height: 75vh;
         margin: 0;
-        background-color: #f4f4f9;
       }
     </style>
     <!-- Assuming your CSS file is named style.css -->
@@ -61,8 +60,8 @@
                 <div class="nav-link dropdown">
                   PREV-YR
                   <div class="dropdown-content">
-                    <a href="2024py.html">2024 Scheme</a>
-                    <a href="2019py.html">2019 Scheme</a>
+                    <a href="2024p.html">2024 Scheme</a>
+                    <a href="2019p.html">2019 Scheme</a>
                   </div>
                 </div>
                 <a href="#" class="nav-link" lang="en">UPLOAD</a>
@@ -83,27 +82,31 @@
       <main>
         <div class="heading">
           <h1>S5-IT Notes|2019 Scheme</h1>
-          <p>Subject</p>
+          <p>Operating Systems</p>
         </div>
         <div class="sem">
           <div class="container">
-            <div class="subject-container">
-              <a href="WAD.html" class="subject-box">
-                <h3 class="subject-name">Web Application Development</h3>
-              </a>
-              <a href="OS.html" class="subject-box">
-                <h3 class="subject-name">Operating Systems</h3>
-              </a>
-              <div class="subject-box">
-                <h3 class="subject-name">Data Communication & Networking</h3>
+            <div class="modules-page">
+              <button class="check-syllabus" onclick="window.location.href='https://drive.google.com/file/d/1cI2KH5BwBsjY313pROObQeYwRbUFgdhI/view?usp=sharing';">
+                Check Syllabus
+              </button>
+              <div class="modules">
+                <a href="https://drive.google.com/file/d/1DFvkPQ5riZuNXFrDtwq3ynZJ9aHqIS05/view?usp=sharing" target="_blank">
+                  <div class="module-box">Module 1</div>
+                </a>
+                <a href="https://drive.google.com/file/d/1DOCg2jdXIOSFjpV1CPj8C8NS41lV0VIt/view?usp=sharing" target="_blank">
+                  <div class="module-box">Module 2</div>
+                </a>
+                <a href="https://drive.google.com/file/d/1e-9IrYVtglUuri8v8xiSL_a4txdgd-Xq/view?usp=sharing" target="_blank">
+                  <div class="module-box">Module 3</div>
+                </a>
+                <a href="https://drive.google.com/file/d/1e-9IrYVtglUuri8v8xiSL_a4txdgd-Xq/view?usp=sharing" target="_blank">
+                  <div class="module-box">Module 4</div>
+                </a>
+                <a href="https://drive.google.com/file/d/1e-9IrYVtglUuri8v8xiSL_a4txdgd-Xq/view?usp=sharing" target="_blank">
+                  <div class="module-box">Module 5</div>
+                </a>
               </div>
-              <div class="subject-box">
-                <h3 class="subject-name">Management For Software Engineers</h3>
-              </div>
-              <div class="subject-box">
-                <h3 class="subject-name">Formal Languages & Automata Theory</h3>
-              </div>
-              <!-- Add more subjects as needed -->
             </div>
           </div>
         </div>
@@ -118,7 +121,7 @@
           color: white;
         "
       >
-        <p style="margin: 0">Copyright © KTU HUB. Developed by VJCET</p>
+        <p style="margin: 0">Copyright © KTU HUB. Developed by ANI</p>
         <div>
           <button
             style="
@@ -148,36 +151,7 @@
       </footer>
     </div>
     <script>
-      (function () {
-        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-          window.chatbase = (...arguments) => {
-            if (!window.chatbase.q) {
-              window.chatbase.q = [];
-            }
-            window.chatbase.q.push(arguments);
-          };
-          window.chatbase = new Proxy(window.chatbase, {
-            get(target, prop) {
-              if (prop === "q") {
-                return target.q;
-              }
-              return (...args) => target(prop, ...args);
-            },
-          });
-        }
-        const onLoad = function () {
-          const script = document.createElement("script");
-          script.src = "https://www.chatbase.co/embed.min.js";
-          script.id = "yRt7tsHRaiSWRIfB1xhuQ";
-          script.domain = "www.chatbase.co";
-          document.body.appendChild(script);
-        };
-        if (document.readyState === "complete") {
-          onLoad();
-        } else {
-          window.addEventListener("load", onLoad);
-        }
-      })();
+      (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "yRt7tsHRaiSWRIfB1xhuQ"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
     </script>
   </body>
 </html>
