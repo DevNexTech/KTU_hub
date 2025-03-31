@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 28px;
+        }
+        h2 {
+            margin-top: 10px;
+            font-size: 22px;
+            color: #555;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .tile {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            transition: transform 0.2s;
+        }
+        .tile:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 80px;
+            height: 80px;
+        }
+        span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tutoring Page</h1>
+    <h2>Select Your Branch</h2>
+    
+    <div class="container">
+        <a href="#" class="tile">
+            <img src="../IMG/cpu.png" alt="CS">
+            <span>CS</span>
+        </a>
+        <a href="tut_index.html" class="tile">
+            <img src="../IMG/pc.png" alt="IT">
+            <span>IT</span>
+        </a>
+        <a href="#" class="tile">
+            <img src="../IMG/ai.png" alt="AD">
+            <span>AD</span>
+        </a>
+        <a href="#" class="tile">
+            <img src="../IMG/mech.png" alt="MECH">
+            <span>MECH</span>
+        </a>
+        <a href="#" class="tile">
+            <img src="../IMG/building.png" alt="CIVIL">
+            <span>CIVIL</span>
+        </a>
+        <a href="#" class="tile">
+            <img src="../IMG/plug.png" alt="EEE">
+            <span>EEE</span>
+        </a>
+        <a href="#" class="tile">
+            <img src="../IMG/circuit.png" alt="ECE">
+            <span>ECE</span>
+        </a>
+        <a href="#" class="tile">
+            <img src="../IMG/graphics.png" alt="CG">
+            <span>CG</span>
+        </a>
+    </div>
+</body>
+</html>

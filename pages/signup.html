@@ -49,27 +49,31 @@
 </head>
 <body>
 
-<div class="container">
-  <h2>Sign Up</h2>
-  <input type="text" id="newUsername" placeholder="Username" required>
-  <input type="password" id="newPassword" placeholder="Password" required>
-  <button onclick="signUp()">Sign Up</button>
-  <a href="signin.html" class="signin-link">Already have an account? Sign in</a>
-</div>
-
-<script>
-  function signUp() {
-    let newUsername = document.getElementById("newUsername").value;
-    let newPassword = document.getElementById("newPassword").value;
-
-    if (newUsername && newPassword) {
-      alert("Account created! Now sign in.");
-      window.location.href = "signin.html";
-    } else {
-      alert("Please fill all fields.");
+  <div class="container">
+    <h2>Sign Up</h2>
+    <input type="text" id="newUsername" placeholder="Username" required>
+    <input type="password" id="newPassword" placeholder="Password" required>
+    <button onclick="signUp()">Sign Up</button>
+    <a href="signin.html" class="signin-link">Already have an account? Sign in</a>
+  </div>
+  
+  <script>
+    function signUp() {
+      let newUsername = document.getElementById("newUsername").value.trim();
+      let newPassword = document.getElementById("newPassword").value.trim();
+  
+      if (newUsername && newPassword) {
+        // Store user credentials in localStorage
+        localStorage.setItem("user", JSON.stringify({ username: newUsername, password: newPassword }));
+  
+        alert("Account created successfully! Redirecting to Sign In...");
+        window.location.href = "signin.html"; // Redirect to sign-in
+      } else {
+        alert("Please fill in all fields.");
+      }
     }
-  }
-</script>
-
-</body>
-</html>
+  </script>
+  
+  </body>
+  </html>
+  

@@ -49,27 +49,32 @@
 </head>
 <body>
 
-<div class="container">
-  <h2>Sign In</h2>
-  <input type="text" id="username" placeholder="Username" required>
-  <input type="password" id="password" placeholder="Password" required>
-  <button onclick="signIn()">Sign In</button>
-  <a href="signup.html" class="signup-link">Don't have an account? Sign up</a>
-</div>
-
-<script>
-  function signIn() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-
-    if (username === "test" && password === "1234") { 
-      sessionStorage.setItem("user", username); // Store user session
-      window.location.href = "index.html"; // Redirect to home page
-    } else {
-      alert("Invalid credentials");
+  <div class="container">
+    <h2>Sign In</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="signIn()">Sign In</button>
+    <a href="signup.html" class="signup-link">Don't have an account? Sign up</a>
+  </div>
+  
+  <script>
+    function signIn() {
+      let username = document.getElementById("username").value.trim();
+      let password = document.getElementById("password").value.trim();
+  
+      // Retrieve stored user credentials
+      let storedUser = JSON.parse(localStorage.getItem("user"));
+  
+      if (storedUser && username === storedUser.username && password === storedUser.password) {
+        sessionStorage.setItem("user", username); // Store session
+        alert("Login successful!");
+        window.location.href = "../index.html"; // Redirect to home page
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
     }
-  }
-</script>
-
-</body>
-</html>
+  </script>
+  
+  </body>
+  </html>
+  
