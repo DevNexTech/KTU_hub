@@ -1,7 +1,8 @@
-# KTU_hub
-KTU_hub is an all-in-one academic toolkit designed specifically for students of APJ Abdul Kalam Technological University (KTU). This platform offers a wide range of essential academic resources and intelligent tools to simplify student life and enhance productivity.
+Here is the **corrected version** of your markdown file, with **no loss of content** and **all formatting issues fixed** (especially the misplaced triple backticks and headings). You can **copy-paste this directly into your `README.md`** file:
 
+---
 
+```markdown
 # 📚 KTU_hub – Academic Suite for KTU Students
 
 **KTU_hub** is an all-in-one academic toolkit designed specifically for students of **APJ Abdul Kalam Technological University (KTU)**. This platform integrates essential educational resources and intelligent tools to help students study smarter, stay organized, and stay connected.
@@ -50,6 +51,7 @@ KTU_hub is an all-in-one academic toolkit designed specifically for students of 
 ├── tut_page/                   # Tutorial-specific pages
 ├── "dropdown list"/            # Dropdown menu content (folder name includes space)
 ├── EXTRAS/                     # Additional tools and resources
+```
 
 ---
 
@@ -63,7 +65,7 @@ To run this project locally:
 2. **Open index.html in your browser**  
    Simply double-click or right-click → "Open with browser".
 
-No backend setup or installation is required — this is a static web application.
+> No backend setup or installation is required — this is a static web application.
 
 ---
 
